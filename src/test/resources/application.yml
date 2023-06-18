@@ -1,23 +1,19 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:in_memory;DB_CLOSE_DELAY=-1
+    url: jdbc:h2://mem:db;DB_CLOSE_DELAY=-1
     username: sa
-    password:
+    password: sa
     driver-class-name: org.h2.Driver
-  sql:
-    init:
-      mode: always
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop
     show-sql: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
-    defer-datasource-initialization: true
 
 api-properties:
-  app-id: 580d71491924c4f364d0a2d002b86236
+  app-id: 91924c4d0a2db83
   url: http://api.openweathermap.org/data/2.5/weather?q={city}&APPID={appid}
